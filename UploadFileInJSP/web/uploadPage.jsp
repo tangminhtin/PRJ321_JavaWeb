@@ -16,7 +16,7 @@
     <body>
         <%
             response.setContentType("text/html"); // thiết lập kiểu tập tin cho đối tượng nhận dữ liệu
-            response.setHeader("Cache-control", "no-cache"); // cho phép bạn chỉ để đặt một tiêu đề số ít.
+            response.setHeader("Cache-control", "no-cache"); //cache-control kiểu như bảo client là có cache dữ liệu này hay không, nếu không muốn cache thì chỉ định là no-cache
 
             String error = ""; // lưu lỗi
             // chuyển đổi đường dẫn nội dung web thành đường dẫn hệ thống tệp đĩa tuyệt đối, đổi kí tự '\\' thành '/'
@@ -128,7 +128,7 @@
                 out.println(error);
             } else {
                 // nếu upload thành công thì hiển thị tên file
-        %>
+%>
         <script language="javascript">
             // history.back(1)
             alert('Uploaded <%=lastFileName%>');
@@ -145,7 +145,7 @@
                 http://localhost:8084/UploadFileInJSP/background.png
         -->
              <img src="<% out.print(request.getScheme() + "://" + request.getServerName() + ":"
-                    + request.getServerPort() + request.getContextPath() + "/" + lastFileName);%>"
+                         + request.getServerPort() + request.getContextPath() + "/" + lastFileName);%>"
              width="200px" alt="images"/>
     </body>
 </html>
